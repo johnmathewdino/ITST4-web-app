@@ -1,0 +1,27 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "A note application created using Node.JS. This is part of the requirements required for the course IT Specialization Track 4 - Advanced Web Application (ITST4)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmathewdino/notes-app.git"
+  },
+  "keywords": [
+    "Node.JS"
+  ],
+  "author": "John Mathew D. Diño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnmathewdino/notes-app/issues"
+  },
+  "homepage": "https://github.com/johnmathewdino/notes-app#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "validator": "^10.0.0",
+    "yargs": "^17.2.1"
+  }
+}
