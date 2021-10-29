@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
+
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <img src="/img/pic.png" alt="">
-    <p>Created by {{name}}</p>
+    {{>header}}
+    <p>{{helpText}}</p>
+    {{>footer}}
 </body>
 </html>

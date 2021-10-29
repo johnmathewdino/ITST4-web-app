@@ -1,7 +1,6 @@
 const path = require('path')
 const express = require('express')
-const { allowedNodeEnvironmentFlags } = require('process')
-
+const hbs = require('hbs')
 
 
 console.log(__dirname)
@@ -13,10 +12,22 @@ console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()
-const publicDirectoryPath = path.join(__dirname, '../public')
 
+// Define paths for Express Config
+const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname,'../templates/views')
+const partialsPath= path.join(__dirname, '../templates/partials')
+
+
+// Set Handlebars engine and views location
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
+
+// Setup Static directory to server
 app.use(express.static(publicDirectoryPath))
+
+
 
 // app.com
 app.get('', (req, res) =>{
@@ -38,7 +49,9 @@ app.get('/help', (req, res) =>{
     //     name: 'Juan'
     // }])
     res.render('help',{
-        helpText: ' This is the text'
+        helpText: ' This is the text',
+        title: 'Help',
+        name: 'John Mathew Dino'
     })
 })
 
