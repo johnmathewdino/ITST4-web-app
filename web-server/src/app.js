@@ -1,5 +1,7 @@
 const path = require('path')
 const express = require('express')
+const { allowedNodeEnvironmentFlags } = require('process')
+
 
 
 console.log(__dirname)
@@ -13,31 +15,41 @@ console.log(__dirname)
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 
+app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath))
 
-
 // app.com
-// app.get('', (req, res) =>{
-//     res.send('<h1> Weather </h1>')
-// })
+app.get('', (req, res) =>{
+    res.render('index',{
+        title: 'Weather',
+        name: "John Mathew Dino"
+    })
+})
 
 // app.com/help
-// app.get('/help', (req, res) =>{
-//     // res.send({
-//     //     name: 'Mathew',
-//     //     age: 21
-//     // })
-//     res.send([{
-//         name: 'Mathew',
-//     },{
-//         name: 'Juan'
-//     }])
-// })
+app.get('/help', (req, res) =>{
+    // res.send({
+    //     name: 'Mathew',
+    //     age: 21
+    // })
+    // res.send([{
+    //     name: 'Mathew',
+    // },{
+    //     name: 'Juan'
+    // }])
+    res.render('help',{
+        helpText: ' This is the text'
+    })
+})
 
-// // app.com/about
-// app.get('/about', (req, res) =>{
-//     res.send('<h1>About</h1>')
-// })
+// app.com/about
+app.get('/about', (req, res) =>{
+    res.render('about',{
+        title: "About Me",
+        name: "John Mathew Dino"
+
+    })
+})
 
 // app.com/weather
 app.get('/weather', (req, res) =>{
