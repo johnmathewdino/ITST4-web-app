@@ -8,7 +8,7 @@ console.log(__dirname)
 // console.log(__filename)
 // D:\3rd Year\4th Year\Web\new\web-server\src\app.js
 
-console.log(path.join(__dirname, '../public'))
+// console.log(path.join(__dirname, '../public'))
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
