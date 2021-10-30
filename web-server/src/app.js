@@ -6,7 +6,6 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 
-
 console.log(__dirname)
 // D:\3rd Year\4th Year\Web\new\web-server\src
 
@@ -16,12 +15,11 @@ console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()
-
+const port = process.env.PORT || 3000
 // Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath= path.join(__dirname, '../templates/partials')
-
 
 // Set Handlebars engine and views location
 app.set('view engine', 'hbs')
@@ -30,7 +28,6 @@ hbs.registerPartials(partialsPath)
 
 // Setup Static directory to server
 app.use(express.static(publicDirectoryPath))
-
 
 
 // app.com
@@ -122,7 +119,6 @@ app.get('/help/*', (req, res) =>{
     })
 })
 
-
 // 404
 app.get('*', (req, res) =>{
     res.render("404",{
@@ -133,6 +129,6 @@ app.get('*', (req, res) =>{
 })
 
 // to start server
-app.listen(3000, () =>{
-    console.log("Server is up on port 3000")
+app.listen(port, () =>{
+    console.log("Server is up on port "+ port)
 })
