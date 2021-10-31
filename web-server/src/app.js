@@ -34,7 +34,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) =>{
     res.render('index',{
         title: 'Weather',
-        name: "John Mathew Dino"
+        name: "John Mathew Diño"
     })
 })
 
@@ -52,7 +52,7 @@ app.get('/help', (req, res) =>{
     res.render('help',{
         helpText: ' This is the text',
         title: 'Help',
-        name: 'John Mathew Dino'
+        name: 'John Mathew Diño'
     })
 })
 
@@ -60,13 +60,14 @@ app.get('/help', (req, res) =>{
 app.get('/about', (req, res) =>{
     res.render('about',{
         title: "About Me",
-        name: "John Mathew Dino"
+        name: "John Mathew Diño"
 
     })
 })
 
 // app.com/weather
 app.get('/weather', (req, res) =>{
+    console.log("/weather")
     if(!req.query.address){
         return res.send({
             error: 'Must provide an address'
@@ -77,15 +78,23 @@ app.get('/weather', (req, res) =>{
         if (error){
             return res.send({error})
         }
+        console.log("/weather")
         forecast(latitude, longitude, (error, forecastData) => {
             if(error){
                 return res.send({error})
             }
+            console.log("/weather")
 
             res.send({
+                date: forecastData.date,
+                degree: forecastData.degree,
+                description: forecastData.description,
                 forecast: forecastData,
                 location,
-                address: req.query.address
+                address: req.query.address,
+                icon: forecastData.icon
+                
+
             })
         })
     })
@@ -114,7 +123,7 @@ app.get('/products', (req, res) =>{
 app.get('/help/*', (req, res) =>{
     res.render('404',{
         title:'404',
-        name: 'John Mathew Dino',
+        name: 'John Mathew Diño',
         errorMessage: 'Help Article not found'
     })
 })
@@ -123,7 +132,7 @@ app.get('/help/*', (req, res) =>{
 app.get('*', (req, res) =>{
     res.render("404",{
         title: '404',
-        name: 'John Mathew Dino',
+        name: 'John Mathew Diño',
         errorMessage: 'Page not found'
     })
 })

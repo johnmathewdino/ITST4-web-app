@@ -12,7 +12,7 @@
 
 // a3371e89db999a6f68a7a908b9195a56
 
-// const request = require('request')
+const request = require('request')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 

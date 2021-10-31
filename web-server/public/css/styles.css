@@ -8,10 +8,14 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    /* NEW  */
+    background: #eaedf3;
 }
 
 .main-content{
     flex-grow: 1;
+    
     
 }
 
@@ -20,6 +24,7 @@ footer{
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
+    text-align: center;
 }
 
 header{
@@ -48,9 +53,63 @@ input{
 }
 button{
     cursor: pointer;
-    border: 1px solid solid #888888;
-    background: #888888;
+    border: 1px solid solid black;
+    background: #2e3440;
     color: white;
     padding: 8px;
 
 }
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+
+}
+
+.nav a {
+    display: inline-block;
+    padding: 10px;
+    color: #333333
+
+}
+.nav :active{
+    font-weight: bold;
+
+}
+
+hr{
+    color: #333333;
+}
+.div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+}
+.margin{
+    margin-bottom: 75px;
+}
+
+#message-2, #degree{
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+#bigmessage p{
+    display: inline-block;
+    vertical-align: top;
+}
+#icon{
+    position: relative;
+    margin-top: 12px;
+    height: 65px;
+    
+}
+
+
