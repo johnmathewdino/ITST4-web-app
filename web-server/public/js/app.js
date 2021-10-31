@@ -27,6 +27,7 @@ weatherForm.addEventListener('submit',(event) =>{
     message2.textContent=""
     degree.textContent = ""
     icon.src = ""
+    description.textContent = ""
 
 
     fetch('/weather?address='+ location).then((response) =>{
